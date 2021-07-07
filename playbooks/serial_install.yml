@@ -1,0 +1,17 @@
+--- #serial command example 
+- hosts: all
+  serial:
+          - 1
+          - 3
+          - 5
+  become: yes
+  tasks:
+          - name: Install Elinks
+            package:
+                    name: elinks
+                    state: latest
+
+          - name: Install Apache
+            yum:
+                    name: httpd
+                    state: latest
