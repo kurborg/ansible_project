@@ -1,0 +1,12 @@
+# inventory
+
+[webservers]
+node1 ansible_host=cloud_user@34.207.232.240
+node2 ansible_host=cloud_user@54.174.83.11
+
+[loadbalancers]
+lb1 ansible_host=cloud_user@54.198.148.131
+
+[local]
+control ansible_connection=local
+

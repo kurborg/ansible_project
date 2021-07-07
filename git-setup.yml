@@ -1,0 +1,9 @@
+--- # intsall git on target host
+- hosts: cloud_user@3.84.84.113, cloud_user@18.207.200.64
+  become: yes
+  tasks:
+          - name: install git
+            yum:
+                    name: git
+                    state: latest
+

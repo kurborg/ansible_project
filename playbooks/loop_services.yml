@@ -1,0 +1,12 @@
+# loop_services.yml
+---
+        - hosts: all
+          become: yes
+          vars_files:
+                  - /home/ansible/vars.yml
+          tasks:
+                  - name: Check Services
+                    service:
+                            name: "{{ item }}"
+                            state: started
+                    loop: "{{ service_list }}"

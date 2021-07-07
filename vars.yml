@@ -1,0 +1,6 @@
+# vars.yml
+
+service_list:
+       - httpd
+       - nfs
+       - mariadb

@@ -1,0 +1,13 @@
+# install_loop.yml
+---
+        - hosts: webservers:loadbalancers
+          become: yes
+          tasks:
+                  - name: Install Software Loop
+                    yum:
+                            name: "{{ item }}"
+                            state: absent
+                    loop:
+                            - elinks
+                            - nmap-ncat
+                            - bind-utils
