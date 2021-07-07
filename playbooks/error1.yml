@@ -1,0 +1,16 @@
+--- #Error handing example
+
+- hosts: localhost
+  become: yes
+  tasks:
+          - name: Install Software
+            yum:
+                    name: broke
+                    state: latest
+            ignore_errors: yes
+           
+          - name: Run Error script
+            command: /home/ansible/error_handling.sh
+            register: cmd_output
+            changed_when: "'CHANGED' in cmd_output.stdout"
+            failed_when: "'FAIL' in cmd_output.stdout"
